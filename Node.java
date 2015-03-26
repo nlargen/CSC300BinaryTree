@@ -15,19 +15,8 @@ public class Node
 	}
 
 
-	public void visitInorder()
-	{
-		if(this.leftNode != null)
-		{
-			this.leftNode.visitInorder();
-			
-		}
-		System.out.println(this.payload);
-		if(this.rightNode != null)
-		{
-			this.rightNode.visitInorder();
-		}
-	}
+	
+	
 
 	public void addNode(Node n)
 	{
