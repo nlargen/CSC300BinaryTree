@@ -1,7 +1,13 @@
 
+<<<<<<< HEAD
 public class Node
 {
 	
+=======
+public class Node 
+{
+
+>>>>>>> bdc439b1d5102b46de2d8cb5417e5f9c51015d23
 	private int payload;
 	private Node leftNode;
 	private Node rightNode;
@@ -13,6 +19,7 @@ public class Node
 		this.rightNode = null;
 	}
 
+<<<<<<< HEAD
 	public void visitInorder()
 	{
 		if(this.leftNode != null)
@@ -26,6 +33,8 @@ public class Node
 			this.rightNode.visitInorder();
 		}
 	}
+=======
+>>>>>>> bdc439b1d5102b46de2d8cb5417e5f9c51015d23
 	public void addNode(Node n)
 	{
 		if(n.getPayload() <= this.payload)
@@ -72,5 +81,9 @@ public class Node
 		return payload;
 	}
 	
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> bdc439b1d5102b46de2d8cb5417e5f9c51015d23
 }
