@@ -1,12 +1,8 @@
 
-<<<<<<< HEAD
-public class Driver 
-{
 
-=======
 public class Driver {
 	
->>>>>>> bdc439b1d5102b46de2d8cb5417e5f9c51015d23
+
 	public static void main(String[] args) 
 	{
 		BinaryTree bt = new BinaryTree();
@@ -22,8 +18,5 @@ public class Driver {
 		bt.displayPostOrder(bt.root);
 
 	}
-<<<<<<< HEAD
-=======
 
->>>>>>> bdc439b1d5102b46de2d8cb5417e5f9c51015d23
 }
