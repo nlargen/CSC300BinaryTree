@@ -12,7 +12,7 @@ public class BinaryTree
 
 	}
 
-	public void displayInOrder(Node focusNode) 
+	public void displayInOrder(Node D2F) 
 	{
 
 		if(this.root == null)
@@ -21,18 +21,18 @@ public class BinaryTree
 		}
 		else 
 		{
-			if(focusNode != null)
+			if(D2F != null)
 			{
-				displayInOrder(focusNode.getLeftNode()); 
-				System.out.println(focusNode.getPayload());
-				displayInOrder(focusNode.getRightNode());
+				displayInOrder(D2F.getLeftNode()); 
+				System.out.println(D2F.getPayload());
+				displayInOrder(D2F.getRightNode());
 			}
 
 
 		}
 	}
 
-	public void displayPostOrder(Node focusNode)
+	public void displayPostOrder(Node D2F)
 	{
 
 		if(this.root == null)
@@ -41,12 +41,12 @@ public class BinaryTree
 		}
 		else
 		{
-			if(focusNode != null)
+			if(D2F != null)
 			{
 
-				displayPostOrder(focusNode.getLeftNode()); 
-				displayPostOrder(focusNode.getRightNode());
-				System.out.println(focusNode.getPayload());
+				displayPostOrder(D2F.getLeftNode()); 
+				displayPostOrder(D2F.getRightNode());
+				System.out.println(D2F.getPayload());
 			}
 		}
 	}
