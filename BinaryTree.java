@@ -2,69 +2,156 @@
 public class BinaryTree 
 
 {
-	Node root;
-
+	private boolean isEmpty;
+	private int payload;
+	private BinaryTree leftTree;
+	private BinaryTree rightTree;
 
 
 	public BinaryTree()
 	{
-		this.root = null;
-
+		this.isEmpty = true;
+		this.leftTree = null;
+		this.rightTree = null;
 	}
 
-	public void displayInOrder(Node D2F) 
+	public boolean search(int value)
 	{
-
-		if(this.root == null)
+		if(value == this.payload)
 		{
-			System.out.println("Empty Tree");
+			return true; 
 		}
-		else 
+		else if (value < this.payload)
 		{
-			if(D2F != null)
+			if(this.leftTree == null)
 			{
-				displayInOrder(D2F.getLeftNode()); 
-				System.out.println(D2F.getPayload());
-				displayInOrder(D2F.getRightNode());
+				return false; 
 			}
+			else 
+			{
+				return this.leftTree.search(value); 
+			}
+		}
+		else if (value > this.payload)
+		{
+			if(this.rightTree == null)
+			{
+				return false; 
+			}
+			else 
+			{
+				return this.rightTree.search(value); 
+			}
+		}
+		return false; 
+		
+	}
+	
+	
 
-
+	private void visitInOrder()
+	{
+		if(this.leftTree != null)
+		{
+			this.leftTree.visitInOrder();
+		}
+		System.out.println(this.payload);
+		if(this.rightTree != null)
+		{
+			this.rightTree.visitInOrder();
 		}
 	}
 
-	public void displayPostOrder(Node D2F)
+	public void displayInOrder()
 	{
-
-		if(this.root == null)
+		System.out.println("**** In Order ****");
+		if(this.isEmpty)
 		{
 			System.out.println("Empty Tree");
 		}
 		else
 		{
-			if(D2F != null)
-			{
+			this.visitInOrder();
+		}
+	}
 
-				displayPostOrder(D2F.getLeftNode()); 
-				displayPostOrder(D2F.getRightNode());
-				System.out.println(D2F.getPayload());
-			}
+	private void visitPreOrder()
+	{
+		System.out.println(this.payload);
+		if(this.leftTree != null)
+		{
+			this.leftTree.visitPreOrder();
+		}
+		if(this.rightTree != null)
+		{
+			this.rightTree.visitPreOrder();
+		}
+	}
+
+	public void displayPreOrder()
+	{
+		System.out.println("**** Pre Order ****");
+		if(this.isEmpty)
+		{
+			System.out.println("Empty Tree");
+		}
+		else
+		{
+			this.visitPreOrder();
+		}
+	}
+
+	private void visitPostOrder()
+	{
+		if(this.leftTree != null)
+		{
+			this.leftTree.visitPostOrder();
+		}
+		if(this.rightTree != null)
+		{
+			this.rightTree.visitPostOrder();
+		}
+		System.out.println(this.payload);
+	}
+
+	public void displayPostOrder()
+	{
+		System.out.println("**** Post Order ****");
+		if(this.isEmpty)
+		{
+			System.out.println("Empty Tree");
+		}
+		else
+		{
+			this.visitPostOrder();
 		}
 	}
 
 	public void add(int value)
 	{
-		Node theNode = new Node(value);
-		if(this.root == null)
+		if(this.isEmpty)
 		{
-			this.root = theNode;
+			this.payload = value;
+			this.isEmpty = false;
 		}
 		else
 		{
-			this.root.addNode(theNode);
+			if(value <= this.payload)
+			{
+				if(this.leftTree == null)
+				{
+					this.leftTree = new BinaryTree();	
+				}
+				this.leftTree.add(value);
+			}
+			else
+			{
+				if(this.rightTree == null)
+				{
+					this.rightTree = new BinaryTree();
+				}
+				this.rightTree.add(value);
+			}
 		}
 	}
-
-
-
-
 }

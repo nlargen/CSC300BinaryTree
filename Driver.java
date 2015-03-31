@@ -13,11 +13,12 @@ public class Driver {
 		bt.add(0);
 		bt.add(3);
 		bt.add(9);
-		System.out.println("In order");
-		bt.displayInOrder(bt.root);
-		System.out.println("Post Order");
-		bt.displayPostOrder(bt.root);
-
+		boolean t2t = (bt.search(1)); 
+		System.out.println(t2t); 
+		
+		
+		
+		
 	}
 
 }
