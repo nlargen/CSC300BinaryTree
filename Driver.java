@@ -9,7 +9,7 @@ public class Driver {
 	{
 		Random r = new Random(); 
 		BinaryTree bt = new BinaryTree();
-		for(int i = 0; i < 46; i++)
+		for(int i = 0; i < 5000; i++)
 		{
 		
 			bt.add(r.nextInt());
@@ -18,7 +18,7 @@ public class Driver {
 		}
 		System.out.println(bt.getMaxDepth()); 
 		System.out.println(bt.isBalanced()); 
-		//bt.displayInOrder();
+		bt.displayInOrder();
 		
 		
 		
