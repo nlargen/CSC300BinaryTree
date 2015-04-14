@@ -340,8 +340,8 @@ public class BinaryTree
 						//the right tree is out of balance
 						
 						this.rightTree.rotateRight(this.rightTree.leftTree);
-						this.parent = this.rightTree.leftTree; 
-						//this.rightTree.rotateRight(this.parent.parent);
+						//this.parent = this.rightTree.leftTree; 
+						this.rightTree.rotateRight(this.leftTree);
 						//missing a line
 					}
 					else if(this.rightTree == null)
@@ -349,8 +349,8 @@ public class BinaryTree
 						//the left tree is out of balance
 						
 						this.leftTree.rotateLeft(this.leftTree.rightTree);
-						this.parent = this.leftTree.rightTree; 
-						//this.leftTree.rotateLeft(this.parent.parent);
+						//this.parent = this.leftTree.rightTree; 
+						this.leftTree.rotateRight(this.rightTree);
 						//missing a line
 					}
 					else
@@ -361,8 +361,8 @@ public class BinaryTree
 							//left is heavier than right
 						
 							this.leftTree.rotateLeft(this.leftTree.rightTree);
-							this.parent = this.leftTree.rightTree;
-							//this.leftTree.rotateLeft(this.parent.parent);
+							//this.parent = this.leftTree.rightTree;
+							this.leftTree.rotateLeft(this.rightTree);
 							
 							//missing a line
 							 
@@ -372,8 +372,8 @@ public class BinaryTree
 							// right is heavier than left
 						
 							this.rightTree.rotateRight(this.rightTree.leftTree);
-							this.parent = this.rightTree.leftTree; 
-							//this.rightTree.rotateRight(this.parent.parent);
+							//this.parent = this.rightTree.leftTree; 
+							this.rightTree.rotateRight(this.leftTree);
 							//missing a line
 						}
 					}
