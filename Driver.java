@@ -7,7 +7,7 @@ public class Driver
 	{
 		Random r = new Random();
 		BinaryTree bt = new BinaryTree();
-		for(int i = 0; i < 500; i++)
+		for(int i = 0; i < 50; i++)
 		{
 			bt.add(r.nextInt());
 		}
